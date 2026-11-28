@@ -37,7 +37,11 @@ Statistics must include sent packets, retransmissions, ACKs, and bytes.
 ```python
 class Membership:
     def __init__(self, my_id, port, name, transport, on_peer_joined, on_peer_dead)
-
+    
+    def name_of(self, peer_id) -> str
+    def peer_unreachable(self, addr)
+    def stop(self)
+    
     def join(self, bootstrap=None)
     def handle(self, msg, addr)
     def leave(self)

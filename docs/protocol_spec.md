@@ -106,3 +106,16 @@ The receiver validates:
 - Total packet length.
 
 Invalid packets are rejected.
+## 6. Membership Discovery
+
+- JOIN is sent to 255.255.255.255 and 127.0.0.1 on every port of the agreed port range (default 5000-5010), or directly to --bootstrap ip:port.
+
+- JOIN is retried every second for up to 5 seconds.
+
+- Peer IDs must be unique.
+
+- HEARTBEAT messages are sent periodically to known peers.
+
+- A peer is considered dead after 4 seconds without a heartbeat.
+
+- LEAVE messages notify other peers when a peer exits gracefully.
